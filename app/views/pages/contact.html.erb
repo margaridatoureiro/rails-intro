@@ -1,0 +1,21 @@
+<h1>Contact us 📫</h1>
+<p>We like to receive messages!</p>
+
+<% current_time = Time.now %>
+<p>The current time is: <%= current_time %></p>
+
+<form action="/contact" method="get">
+  <input type="text" name="member" 
+  value="<%= params[:member] %>"
+  placehoder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<h3>Meet our team members:</h3>
+<ol>
+  <% @members.each do |member| %>
+  <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to "Back to the Homepage", root_path %>
